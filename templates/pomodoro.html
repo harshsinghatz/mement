@@ -1,0 +1,56 @@
+<div class="timer-component">
+  <div class="video-container">
+    <video autoplay loop muted>
+      <source
+        src="https://player.vimeo.com/external/384761655.sd.mp4?s=383ab4dbc773cd0d5ece3af208d8f963368f67e4&profile_id=165&oauth2_token_id=57447761"
+        type="video/mp4"
+      />
+      Your browser does not support the video tag.
+    </video>
+    <div class="overlay"></div>
+    <div id="timer-container">
+      <svg id="timer" viewBox="0 0 100 100">
+        <circle class="circle" cx="50" cy="50" r="45"></circle>
+        <circle class="progress" cx="50" cy="50" r="45"></circle>
+        <text class="text" x="50" y="50">25:00</text>
+      </svg>
+    </div>
+    <button id="openModalBtn">Settings</button>
+    <div class="button-control">
+      <button id="start-button">Start</button>
+      <button id="reset-button" disabled>Reset</button>
+    </div>
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Pomodoro settings</h2>
+        <div id="options">
+          <label for="work-duration">Work Duration (minutes):</label>
+          <input type="number" id="work-duration" min="1" value="25" />
+          <label for="break-duration">Break Duration (minutes):</label>
+          <input type="number" id="break-duration" min="1" value="5" />
+        </div>
+        <label for="searchBar1">Background Video:</label>
+        <input type="text" id="searchBar1" placeholder="Search for videos" />
+        <label for="searchBar2">Background Audio:</label>
+        <input type="text" id="searchBar2" placeholder="Search for audios" />
+        <label for="colorPicker1">Gradient Color:</label>
+        <input type="color" id="colorPicker1" />
+        <label for="colorPicker2">Text Color:</label>
+        <input type="color" id="colorPicker2" />
+        <br />
+        <br />
+        <button id="applyChangesBtn">Apply Changes</button>
+      </div>
+    </div>
+  </div>
+  <div id="embed-iframe"></div>
+  <div class="episode"></div>
+  <div class="episode"></div>
+  <div class="episode"></div>
+  <script
+    src="https://open.spotify.com/embed-podcast/iframe-api/v1"
+    async
+  ></script>
+</div>

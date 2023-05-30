@@ -1,0 +1,413 @@
+/* styles.css */
+
+.modal {
+  display: none; /* Hide the modal by default */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2); /* Change the opacity as desired */
+  z-index: -1;
+}
+
+#openModalBtn {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.video-container video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+}
+
+.navigation {
+  background-color: #f2f2f2;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.navigation a {
+  display: inline-block;
+  color: #333;
+  text-decoration: none;
+  margin-right: 10px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  background-color: #e0e0e0;
+  transition: background-color 0.3s ease;
+}
+
+.navigation a:hover {
+  background-color: #c0c0c0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+#todo-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+#add-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  width: 100%;
+}
+
+#todo-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+}
+
+li label {
+  margin-left: 10px;
+  flex-grow: 1;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.delete-button {
+  background-color: #ff0000;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  #todo-input,
+  #add-button {
+    width: 100%;
+  }
+
+  li {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .delete-button {
+    margin-top: 10px;
+    margin-left: 0;
+  }
+}
+
+#timer-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+#timer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#timer .circle {
+  fill: transparent;
+  stroke: #23b2ad;
+  stroke-width: 8px;
+}
+
+#timer .progress {
+  fill: transparent;
+  stroke: #23b2ad;
+  stroke-width: 8px;
+  stroke-dasharray: 628;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1s linear;
+}
+
+#timer .text {
+  fill: #23b2ad;
+  text-anchor: middle;
+  dominant-baseline: central;
+  font-weight: bold;
+}
+
+#options {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#options label {
+  margin-right: 10px;
+}
+
+#options input[type="number"] {
+  width: 60px;
+  padding: 5px;
+}
+
+#start-button,
+#reset-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.memento-board {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 1rem;
+  gap: 2rem;
+}
+
+.weeks-container {
+  width: 45%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.week-el {
+  height: 10px;
+  width: 10px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 2px;
+}
+
+.week-el-done {
+  background-color: black;
+}
+
+.memento-component {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #f2f2f2;
+  border-radius: 8px;
+}
+
+.memento-component h2 {
+  color: #333;
+}
+
+.memento-component .memento-controls {
+  margin-top: 20px;
+}
+
+.memento-component label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.memento-component input[type="number"],
+.memento-component input[type="date"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.memento-component button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.memento-component button:hover {
+  background-color: #0056b3;
+}
+
+.memento-component .memento-board {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: left;
+}
+
+.timer-component {
+  margin: 0 auto;
+  text-align: center;
+  height: 100%;
+}
+
+.timer-container {
+  position: relative;
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+}
+
+.timer {
+  transform: rotate(-90deg);
+  width: 100%;
+  height: 100%;
+}
+
+.circle {
+  fill: none;
+  stroke: #ddd;
+  stroke-width: 6;
+  stroke-dasharray: 283;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.8s ease;
+}
+
+.progress {
+  fill: none;
+  stroke: #007bff;
+  stroke-width: 6;
+  stroke-dasharray: 283;
+  stroke-dashoffset: 283;
+  transition: stroke-dashoffset 0.8s ease;
+}
+
+.text {
+  fill: #333;
+  font-size: 24px;
+  font-weight: bold;
+  dominant-baseline: middle;
+  text-anchor: middle;
+}
+
+.options {
+  margin-top: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  /* color: #fff; */
+}
+
+.button-control {
+  position: absolute;
+  bottom: 1rem;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
